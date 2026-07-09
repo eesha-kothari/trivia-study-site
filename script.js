@@ -23,7 +23,7 @@ async function fetchpq() {
         let response = await fetch(`https://trivia-study-site.vercel.app/api/questions`);
         let data = await response.json();
         for(let i=0; i<data.questions.length; i++) {
-            pqbank.push(new info(data.questions[i].Question, data.questions[i].Answer));
+            pqbank.push(new info(data.questions[i].Question, data.questions[i].Answer.replaceAll('\r','')));
         }
         pqfetched = true;
     }
@@ -38,7 +38,7 @@ async function fetchtopics() {
         for(let i=0; i<data.thetopicinfo.length; i++) {
             let temparray = [];
             for(let j=0; j<data.thetopicinfo[i].length; j++) {
-                temparray.push(new info(data.thetopicinfo[i][j].Question, data.thetopicinfo[i][j].Answer));
+                temparray.push(new info(data.thetopicinfo[i][j].Question, data.thetopicinfo[i][j].Answer.replaceAll('\r','')));
             }
             topicinfo.push(temparray);
         }
