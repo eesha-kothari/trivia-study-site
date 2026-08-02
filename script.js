@@ -233,6 +233,7 @@ function random_gameplay() {
         } else if (clickedtype == "SAQ") {
             document.getElementById("SA").style.display = "inline";
             document.getElementById("MC").style.display = "none";
+            document.getElementById("showoptions").style.display = "none";
         }
     }
     document.getElementById("loading").style.display = "none";
@@ -292,7 +293,7 @@ function checksaq() {
         ic++;
         if (ic >= 3) {
             document.getElementById("statecorrect").innerText = ("INCORRECT; CORRECT ANSWER: " + topic[randq].a);
-            setTimeout(saqreset, 1000);
+            setTimeout(saqreset, 1500);
         } else {
             setTimeout(() => {
                 document.getElementById("saqans").value = "";
@@ -356,6 +357,7 @@ function order_gameplay() {
     } else if (clickedtype == "SAQ") {
         document.getElementById("SA").style.display = "inline";
         document.getElementById("MC").style.display = "none";
+        document.getElementById("showoptions").style.display = "none";
     }
     document.getElementById("loading").style.display = "none";
 }
