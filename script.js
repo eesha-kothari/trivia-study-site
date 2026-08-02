@@ -282,6 +282,12 @@ if (document.getElementById("check")) {
     document.getElementById("check").addEventListener("click", checksaq);
 }
 
+if (document.getElementById("saqans")) {
+    document.getElementById("saqans").addEventListener("keydown", () => {
+        if(event.key == "Enter") checksaq();
+    });
+}
+
 function checksaq() {
     if (document.getElementById("saqans").value == topic[randq].a) {
         document.getElementById("statecorrect").style.color = "green";
@@ -293,7 +299,7 @@ function checksaq() {
         ic++;
         if (ic >= 3) {
             document.getElementById("statecorrect").innerText = ("INCORRECT; CORRECT ANSWER: " + topic[randq].a);
-            setTimeout(saqreset, 1500);
+            setTimeout(saqreset, 2000);
         } else {
             setTimeout(() => {
                 document.getElementById("saqans").value = "";
