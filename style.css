@@ -50,3 +50,10 @@ button:hover {
 #loading * {
     display: inline-block;
 }
+
+#saqans {
+  font-family: Courier New;
+  font-size: 20px;
+  padding: 5px;
+  width: 25%;
+}
